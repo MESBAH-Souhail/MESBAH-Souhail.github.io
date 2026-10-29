@@ -1,56 +1,196 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>My Engineering Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Souhail - Ingénieur en Sciences du Numérique</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
-        nav { margin-bottom: 20px; padding: 10px; background-color: #f4f4f4; border-radius: 5px; }
-        nav a { margin-right: 15px; text-decoration: none; color: #0056b3; font-weight: bold; }
-        section { margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #ccc; }
+        /* Design Moderne et Épuré - Thème Sombre */
+        :root {
+            --primary: #e63946; /* Rouge INP-ENSEEIHT */
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --text-main: #f1faee;
+            --text-muted: #a8dadc;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Barre de navigation fixe */
+        nav {
+            background-color: rgba(18, 18, 18, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Conteneur principal */
+        .container {
+            max-width: 1000px;
+            margin: 100px auto 0 auto;
+            padding: 20px;
+        }
+
+        /* Sections */
+        section {
+            background-color: var(--bg-card);
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary);
+        }
+
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        /* Boutons CV */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-right: 10px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #d62828;
+        }
+
+        /* Grille pour les projets */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        /* Photo de profil (Espace réservé) */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
 
-    <!-- This is your navigation menu with the 6 mandatory tabs -->
     <nav>
         <a href="#welcome">Welcome</a>
         <a href="#engineering">Engineering Course</a>
         <a href="#mobility">International Mobility</a>
         <a href="#sustainability">Sustainability & Civic Engagement</a>
-        <a href="#activities">Sport & Other Activities</a>
+        <a href="#activities">Sport & Activities</a>
         <a href="#career">Career Development</a>
     </nav>
 
-    <section id="welcome">
-        <h2>Welcome</h2>
-        <p>Hello! I am a first-year engineering student in Digital Sciences in Toulouse. Welcome to my portfolio.</p>
-        <!-- Add your photo, CV links, and elevator pitch video here -->
-    </section>
+    <div class="container">
+        <!-- 1. WELCOME -->
+        <section id="welcome">
+            <!-- <img src="profil.jpg" alt="Souhail" class="profile-img"> -->
+            <h1>Souhail</h1>
+            <h3>Étudiant Ingénieur en Sciences du Numérique @ INP-ENSEEIHT</h3>
+            <p>Bienvenue sur mon e-portfolio. Actuellement en première année de cycle ingénieur après des classes préparatoires MPSI/MP* au Lycée Moulay Driss, je me spécialise en développement logiciel et mathématiques appliquées.</p>
+            
+            <a href="cv_souhail_fr.pdf" target="_blank" class="btn">Télécharger CV (FR)</a>
+            <a href="cv_souhail_en.pdf" target="_blank" class="btn">Download CV (EN)</a>
+            
+            <h3 style="margin-top: 30px;">My Elevator Pitch (Unique Value Proposal)</h3>
+            <p><em>[L'espace pour ta vidéo de 2-3 minutes sera inséré ici]</em></p>
+        </section>
 
-    <section id="engineering">
-        <h2>Engineering Course</h2>
-        <p>Details about my projects in Ada programming, MATLAB algorithms, and systems modeling.</p>
-    </section>
+        <!-- 2. ENGINEERING COURSE -->
+        <section id="engineering">
+            <h2>Engineering Course</h2>
+            <p>Voici quelques-uns des projets techniques sur lesquels j'ai travaillé en appliquant la méthode STAR :</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>Programmation Ada (Jeu & Tri)</h3>
+                    <p>Développement de systèmes robustes avec vérification stricte des entrées utilisateur pour empêcher les plantages logiciels (ex: détection de chaînes de caractères au lieu de caractères uniques).</p>
+                </div>
+                <div class="card">
+                    <h3>Algorithmie spatiale (MATLAB)</h3>
+                    <p>Développement d'un algorithme vectorisé basé sur la log-vraisemblance pour estimer le centre d'un nuage de points sans boucles chronophages.</p>
+                </div>
+                <div class="card">
+                    <h3>Logique formelle (CoqIDE)</h3>
+                    <p>Modélisation et preuves mathématiques de propositions logiques à l'aide de tactiques formelles pour garantir des systèmes sans bugs.</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="mobility">
-        <h2>International Mobility</h2>
-        <p>My 3 potential international mobility projects.</p>
-    </section>
+        <!-- 3. INTERNATIONAL MOBILITY -->
+        <section id="mobility">
+            <h2>International Mobility</h2>
+            <p><em>[Nous ajouterons ici tes 3 projets de mobilité internationale ciblés, en lien avec tes modèles]</em></p>
+        </section>
 
-    <section id="sustainability">
-        <h2>Sustainability & Civic Engagement</h2>
-        <p>Details about my civic engagement.</p>
-    </section>
+        <!-- 4. SUSTAINABILITY & CIVIC ENGAGEMENT -->
+        <section id="sustainability">
+            <h2>Sustainability & Civic Engagement</h2>
+            <p><em>[Nous détaillerons ici ton engagement civique ou associatif]</em></p>
+        </section>
 
-    <section id="activities">
-        <h2>Sport & Other Activities</h2>
-        <p>Information about my strength training routines and competitive table tennis.</p>
-    </section>
+        <!-- 5. SPORT & OTHER ACTIVITIES -->
+        <section id="activities">
+            <h2>Sport & Other Activities</h2>
+            <p>Le sport fait partie intégrante de mon équilibre personnel et m'apporte la rigueur et la régularité nécessaires au métier d'ingénieur :</p>
+            <ul>
+                <li><strong>Tennis de table :</strong> Pratique intensive de 1h à 2h chaque jour (du lundi au vendredi).</li>
+                <li><strong>Musculation :</strong> 3 séances de force par semaine.</li>
+                <li><strong>Sports d'équipe et cardio :</strong> Football (1 à 2 fois par semaine) et Natation hebdomadaire.</li>
+            </ul>
+        </section>
 
-    <section id="career">
-        <h2>Career Development</h2>
-        <p>My 3 role model profile analyses and career trajectory.</p>
-    </section>
+        <!-- 6. CAREER DEVELOPMENT -->
+        <section id="career">
+            <h2>Career Development</h2>
+            <p><em>[Nous ajouterons ici l'analyse des profils de tes 3 modèles professionnels inspirants (Role Models)]</em></p>
+        </section>
+    </div>
 
 </body>
 </html>
